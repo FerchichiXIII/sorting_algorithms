@@ -5,7 +5,8 @@
  * @size: Number of elements in @array
  * Return: Nothing
  */
-bubble_sort(int *array, size_t size)
+
+void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
 	int swp;
