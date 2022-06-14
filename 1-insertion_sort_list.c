@@ -1,20 +1,14 @@
 #include "sort.h"
 /**
- * insertion_sort_list -
- * Sorts a doubly linked list of integers in ascending order
- * @list: The list to be sorted
- * Return: Nothing
- *
+ * insertion_sort_list - Sorts doubly linked list
+ * @list: pointer to pointer to head
  */
-
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *i, *j, *key;
 
-	if (list == NULL || list == NULL || (*list)->next == NULL)
-	{
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
-	}
 
 	i = (*list)->next;
 	while (i)
@@ -32,8 +26,8 @@ void insertion_sort_list(listint_t **list)
 			j->next = j->prev;
 			j->prev = key;
 			if (j->prev == NULL)
-				list = j;
-			print_list(list);
+				*list = j;
+			print_list(*list);
 		}
 		i = i->next;
 	}
